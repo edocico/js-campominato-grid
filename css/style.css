@@ -60,3 +60,25 @@ h1 {
     display: flex;
     flex-wrap: wrap;
 }
+
+.grid-cell {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cell81 {
+    
+    flex-basis: calc(100% / 9);
+}
+
+.cell49 {
+    
+    flex-basis: calc(100% / 7);
+}
+
+.cell100 {
+    flex-basis: calc(100% / 10);    
+}
