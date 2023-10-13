@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Campo Minato</title>
 </head>
 <body>
   
     <div class="app">
         <header class="app-header">
             <h1>Campo Minato</h1>
-            <div class="control-section"></div>
+            <div class="control-section">
+                <div class="selection-area">
+                    <label for="difficulty-select">Scegli una difficoltà:</label>
+                    <select name="difficulty" id="difficulty-select">
+                        <option value="100">1</option>
+                        <option value="81">2</option>
+                        <option value="49">3</option>
+                    </select>
+                </div>
+                <div class="button-area">
+                    <button class="play-btn">Gioca!</button>
+                </div>
+            </div>
         </header>
         <div class="app-main">
             <div class="container">
