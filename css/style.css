@@ -8,6 +8,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+   
 }
 
 .app-main {
@@ -52,21 +53,23 @@ h1 {
 }
 
 .container {
-    max-width: 95%;
+    max-width: 80%;
     margin: 0 auto;
+    
 }
 
 .grid {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .grid-cell {
-    aspect-ratio: 1;
+    aspect-ratio: 21/9;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    border: 1px solid black;
 }
 
 .cell81 {
@@ -81,4 +84,8 @@ h1 {
 
 .cell100 {
     flex-basis: calc(100% / 10);    
+}
+
+.bg-color {
+    background-color: skyblue;
 }
