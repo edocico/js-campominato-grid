@@ -9,67 +9,43 @@ console.log(selectDOMElement)
 console.log(selectDOMElement.value)
 const playBtnDOMElement = document.querySelector('.play-btn')
 console.log(playBtnDOMElement)
-/* const cellNumber = parseInt(selectDOMElement.value)
-console.log(cellNumber) */
+
 
 playBtnDOMElement.addEventListener('click', function() {
-    gridDOMElement.innerHTML = ''
-    const cellNumber = parseInt(selectDOMElement.value)
-    console.log(cellNumber)
-    for (let i = 0; i < cellNumber; i++) {
-        const n = i + 1
-        let htmlCell 
-        if (cellNumber === 100) {
-            let htmlCell = `<div class="grid-cell cell100">${n}</div>`
-            console.log(htmlCell)
-            gridDOMElement.innerHTML += htmlCell
-        } else if (cellNumber === 81) {
-            let htmlCell = `<div class="grid-cell cell81">${n}</div>`
-            console.log(htmlCell)
-            gridDOMElement.innerHTML += htmlCell
-        } else if (cellNumber === 49) {
-            let htmlCell = `<div class="grid-cell cell49">${n}</div>`
-            console.log(htmlCell)
-            gridDOMElement.innerHTML += htmlCell
-        }
-        
-    }
-    const cellDOMElement = document.querySelectorAll('.grid-cell')
-    console.log(cellDOMElement)
-    for (let i = 0; i < cellDOMElement.length; i++) {
-        const currentCellDOMElement = cellDOMElement[i]
-        currentCellDOMElement.addEventListener('click', function() {
-            currentCellDOMElement.classList.add('bg-color')
-        })
-    }  
+    creaGriglia()
 })
 
 
 
 // funzione di generazione delle celle
 
-/* function cellGeneration(iNumber) {
-    
-    for (let i = 0; i < iNumber; i++) {
-        const n = i + 1
-        // let htmlCell
-        if (iNumber === 100) {
-            let htmlCell = `<div class="grid-cell cell100">${n}</div>`
-            gridDOMElement.innerHTML += htmlCell
-        } else if (iNumber === 81) {
-            let htmlCell = `<div class="grid-cell cell81">${n}</div>`
-            gridDOMElement.innerHTML += htmlCell
-        } else if (iNumber === 49) {
-            let htmlCell = `<div class="grid-cell cell49">${n}</div>`
-            gridDOMElement.innerHTML += htmlCell
-        }
-        
+// Questa funzione crea una griglia di celle con numeri progressivi
+// Il numero di celle dipende dal valore selezionato dall'utente
+// Il colore di sfondo delle celle cambia quando si clicca su di esse
+function creaGriglia() {
+    // Svuota il contenuto dell'elemento gridDOMElement
+    gridDOMElement.innerHTML = "";
+    // Ottieni il numero di celle dalla selezione dell'utente
+    const cellNumber = parseInt(selectDOMElement.value);
+    // Crea un ciclo for per generare le celle
+    for (let i = 0; i < cellNumber; i++) {
+      // Calcola il numero da inserire nella cella
+      const n = i + 1;
+      // Crea un elemento html per la cella con la classe appropriata in base al numero di celle
+      let htmlCell = `<div class="grid-cell cell${cellNumber}">${n}</div>`;
+      // Aggiungi l'elemento html al contenuto dell'elemento gridDOMElement
+      gridDOMElement.innerHTML += htmlCell;
     }
-    return  gridDOMElement.innerHTML += htmlCell
-
-    /* cellDOMElements = document.querySelectorAll('.grid-cell')
-
-    for (let i = 0; i < cellDOMElements.length; i++) {
-        const currentCellElement = cellDOMElements[i]
-    }  */
-//} */
+    // Seleziona tutti gli elementi con la classe grid-cell
+    const cellDOMElement = document.querySelectorAll(".grid-cell");
+    // Crea un ciclo for per aggiungere un evento click a ogni cella
+    for (let i = 0; i < cellDOMElement.length; i++) {
+      // Ottieni l'elemento corrente dal ciclo
+      const currentCellDOMElement = cellDOMElement[i];
+      // Aggiungi una funzione anonima che cambia il colore di sfondo della cella quando si clicca su di essa
+      currentCellDOMElement.addEventListener("click", function () {
+        currentCellDOMElement.classList.add("bg-color");
+      });
+    }
+  }
+  
