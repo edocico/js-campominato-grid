@@ -41,9 +41,10 @@ function creaGriglia() {
     for (let i = 0; i < cellDOMElement.length; i++) {
       // Ottengo l'elemento corrente dal ciclo
       const currentCellDOMElement = cellDOMElement[i];
-      // Aggiungo una funzione anonima che cambia il colore di sfondo della cella quando si clicca su di essa
+      // Aggiungo una funzione anonima che cambia il colore di sfondo della cella quando si clicca su di essa e aggiunge anche una leggera box-shadow
       currentCellDOMElement.addEventListener("click", function () {
         currentCellDOMElement.classList.add("bg-color");
+        currentCellDOMElement.classList.add('shadow');
       });
     }
   }
